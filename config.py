@@ -19,14 +19,14 @@ Hi {name}, welcome to the '{GUILD}' Discord Server."""
 # Help message
 HELP_MSG = f"""\
 This bot is used to verify Pro licenses for access to the '{GUILD}' Discord Server. 
-Type your license key into a private message and I will check the license server. 
+Type your license key into a direct message and I will check the license server. 
 If the license is valid you will be promoted to a Pro User.
 """
 
 # Unknown message
 UNKNOWN_MESSAGE = f"""\
 Hi! I am the license verification bot. I can verify your license key for access to the '{GUILD}' Discord Server. 
-Please send me your license key in a private message. DO NOT type your license key in the public channel.
+Please send me your license key in a direct message. DO NOT type your license key in the public channel.
 """
 
 # Successfull setting role
