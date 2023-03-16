@@ -78,6 +78,7 @@ class RegistrationClient(discord.Client):
 
         try:
             response = requests.get(os.environ['LICENSE_SERVER'] + license)
+            logging.warning(f"Response: {response}")
 
         except Exception as e:
             logging.warning(f"Could not access license server. Error: {e}")
