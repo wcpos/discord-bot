@@ -11,9 +11,9 @@ LOGFILE_PATH = "bot.log"
 
 
 def WELCOME_MSG(name):
-  msg = f"""\
+    msg = f"""\
 Hi {name}, welcome to the '{GUILD}' Discord Server."""
-  return msg
+    return msg
 
 
 # Help message
@@ -42,3 +42,6 @@ I could not contact the license server, please try again in a moment or contact 
 
 ERROR_LICENSE_SERVER_ERROR = """\
 There was an error."""
+
+VERIFING_LICENSE = """\
+Verifying license. One momnet please..."""

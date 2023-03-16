@@ -55,8 +55,9 @@ class RegistrationClient(discord.Client):
         match = regex.search(cont)
 
         if match:
+            await cnl.send(VERIFING_LICENSE)
             license = match.group(0)
-            await self.verify(message, cont)
+            await self.verify(message, license)
             return
 
         # Case: Help command.
@@ -71,12 +72,12 @@ class RegistrationClient(discord.Client):
 
         await cnl.send(UNKNOWN_MESSAGE)
 
-    async def verify(self, message, cont):
+    async def verify(self, message, license):
         cnl = message.channel
         response = None
 
         try:
-            response = requests.get('https://yourapi.com/verify?key=' + cont)
+            response = requests.get(os.environ['LICENSE_SERVER'] + license)
 
         except Exception as e:
             logging.warning(f"Could not access license server. Error: {e}")
@@ -86,7 +87,7 @@ class RegistrationClient(discord.Client):
         if response.status_code == 200:
             try:
                 json_response = response.json()
-                if json_response['valid']:
+                if json_response['success']:
                     # Set role to student
                     guild = discord.utils.get(self.guilds, name=GUILD)
                     member = await guild.fetch_member(int(message.author.id))
