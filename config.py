@@ -24,7 +24,7 @@ If the license is valid you will be promoted to a Pro User.
 """
 
 # Unknown message
-UNKNOWN_MESSAGE = """\
+UNKNOWN_MESSAGE = f"""\
 Hi! I am the license verification bot. I can verify your license key for access to the '{GUILD}' Discord Server. 
 Please send me your license key in a private message. DO NOT type your license key in the public channel.
 """

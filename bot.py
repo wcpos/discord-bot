@@ -27,7 +27,7 @@ class RegistrationClient(discord.Client):
         logging.info(f"{guild.name}(id: {guild.id})")
 
         await self.change_presence(status=discord.Status.online,
-                                   activity=discord.Game("Write me!"))
+                                   activity=discord.Game("DM me!"))
         print("BOT IS RUNNING!")
 
     # Automatic message when a user joins the chat
