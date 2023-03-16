@@ -48,7 +48,7 @@ class RegistrationClient(discord.Client):
 
         cnl = message.channel
         cont = message.content.lower().strip()
-        logging.info(f"New Message from {message.author}: {cont}")
+        # logging.info(f"New Message from {message.author}: {cont}")
 
         # Case: Message matches license pattern.
         regex = re.compile(r'[0-9a-f]{40}')
@@ -81,7 +81,7 @@ class RegistrationClient(discord.Client):
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'}
             response = requests.get(
                 os.environ['LICENSE_SERVER'] + license, headers=headers)
-            logging.warning(f"Response: {response}")
+            # logging.warning(f"Response: {response}")
 
         except Exception as e:
             logging.warning(f"Could not access license server. Error: {e}")
